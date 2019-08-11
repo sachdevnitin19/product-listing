@@ -10,6 +10,7 @@ const http = require('http');
 const Promise = require('bluebird');
 const mongoose = require('mongoose');
 
+console.log(`#### NODE_ENV :- ${process.env.NODE_ENV} ####`);
 /**
  * Get port from environment and store in Express.
  */
@@ -29,8 +30,9 @@ const options = {
     reconnectInterval: 500, // Reconnect every 500ms
 };
 
-const MONGO_URL = 'mongodb://admin:admin123@ds221339.mlab.com:21339/property-listing';
-
+const MONGO_URL = `mongodb://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`;
+console.log("#### MONGO_URL ####");
+console.log(MONGO_URL);
 let connectWithRetry = () => {
     console.log('trying to connect to mongodb');
     mongoose.connect(MONGO_URL, options).then(() => {
@@ -54,7 +56,8 @@ const startServer = () => {
      * Listen on provided port, on all network interfaces.
      */
     server.listen(port, function () {
-        console.log(`server start on PORT ${port}.`)
+        console.log(`server start on PORT ${port}.`
+        )
     });
     /**
      * Attach event handlers
