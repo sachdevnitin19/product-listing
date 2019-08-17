@@ -12,4 +12,8 @@ let productSchema = new mongoose.Schema({
     {
         timestamps: true
     });
+// assigning a static method for getting total count of products.
+productSchema.statics.countTotalProducts = function () {
+    return this.countDocuments().exec();
+};
 module.exports = mongoose.model("product", productSchema, "products");
