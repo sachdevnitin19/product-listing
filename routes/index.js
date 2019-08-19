@@ -49,12 +49,10 @@ router.post('/product', upload.single('productFile'), function (req, res) {
 });
 
 router.get('/product', function (req, res) {
-    console.log(req.query.columns[0].search);
     let queryOptions = {
         sort: {}
     };
     let findQuery = {};
-    console.log(req.query);
     queryOptions.limit = parseInt(req.query.length);
     queryOptions.skip = parseInt(req.query.start);
     if (isNaN(queryOptions.limit) || isNaN(queryOptions.skip)) {
