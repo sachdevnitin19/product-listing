@@ -8,7 +8,7 @@ Flipkart's Dataset link :- https://www.kaggle.com/PromptCloudHQ/flipkart-product
 Mlab's Mongo DAAS (Database As A Service) is used for Persistent Data Storage.
 Express.JS Node Framework for REST based Webservice. 
 
-##REST APIs
+## REST APIs
 Following are the REST APIs:-
 
 1) POST '/api/v1/product' to dump products data in DB.
@@ -16,11 +16,11 @@ Following are the REST APIs:-
 
 Postman Collection Link:- https://www.getpostman.com/collections/fa0243caa1c34aab1010
 
-##Deployment Steps:-
+## Deployment Steps:-
 Currently it is deployed on Heroku which is PAAS (Platform As A Service).
 Follow steps mentioned in this link:- https://devcenter.heroku.com/articles/deploying-nodejs
 
-##Steps to run locally
+## Steps to run locally
 1. Clone this repository.
 2. cd into repo directory.
 3. run `npm install`. Make sure nodejs is installed on your machine
